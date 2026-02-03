@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Social Media profissional para clínicas e profissionais da saúde. Conteúdo semanal consistente, organização e direção estratégica.">
+    <title>Social Media para Clínicas | Constância e Organização</title>
+    <style>
+        :root {
+            --bg: #fafafa;
+            --card: #ffffff;
+            --text: #1a1a1a;
+            --muted: #6b7280;
+            --border: #e5e7eb;
+            --primary: #0f766e;
+            --primary-hover: #0d5e58;
+            --accent: #f0fdfa;
+            --shadow: rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px var(--shadow);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 24px;
+        }
+
+        .header-nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .header-nav a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+            color: var(--text);
+        }
+
+        .hero h2 {
+            font-size: clamp(18px, 3vw, 22px);
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--muted);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-bullets {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto 50px;
+            text-align: left;
+        }
+
+        .hero-bullet {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .hero-bullet svg {
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .hero-bullet h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .hero-bullet p {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(15, 118, 110, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent);
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            padding: 80px 0;
+            background: var(--card);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(28px, 4vw, 38px);
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.8px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: var(--muted);
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0 auto 20px;
+        }
+
+        .step h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .step p {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* Plans Section */
+        .plans {
+            padding: 80px 0;
+            background: var(--bg);
+        }
+
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .plan-card {
+            background: var(--card);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 40px 30px;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px var(--shadow);
+        }
+
+        .plan-card.featured {
+            border-color: var(--primary);
+            box-shadow: 0 8px 16px var(--shadow);
+        }
+
+        .plan-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .plan-name {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--muted);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .plan-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .plan-price {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+
+        .plan-price small {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--muted);
+        }
+
+        .plan-billing {
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 30px;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .plan-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .plan-features li:last-child {
+            border-bottom: none;
+        }
+
+        .plan-features svg {
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .plan-cta {
+            width: 100%;
+        }
+
+        /* Add-on Section */
+        .addon {
+            background: var(--accent);
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            padding: 24px;
+            margin-top: 40px;
+        }
+
+        .addon h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
+        .addon ul {
+            list-style: none;
+            font-size: 14px;
+            color: var(--text);
+        }
+
+        .addon li {
+            padding: 6px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .addon li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        .addon-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-top: 16px;
+        }
+
+        /* What's Included Section */
+        .included {
+            padding: 80px 0;
+            background: var(--card);
+        }
+
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .included-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 30px;
+        }
+
+        .included-card h3 {
+            font-size: 18px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .included-card ul {
+            list-style: none;
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .included-card li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .included-card li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background: var(--bg);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 30px;
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .testimonial-info h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .testimonial-info p {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .stat h3 {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .stat p {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background: var(--card);
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 24px 0;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            font-family: inherit;
+        }
+
+        .faq-question:hover {
+            color: var(--primary);
+        }
+
+        .faq-icon {
+            flex-shrink: 0;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer-content {
+            padding-top: 16px;
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--muted);
+        }
+
+        /* Form Section */
+        .form-section {
+            padding: 80px 0;
+            background: var(--accent);
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 40px auto 0;
+            background: var(--card);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .form-input,
+        .form-select {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 15px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            background: var(--bg);
+            color: var(--text);
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+
+        .form-input:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-submit {
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        .form-note {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 16px;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: #ffffff;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 16px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .footer-section p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #d1d5db;
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 13px;
+            color: #9ca3af;
+        }
+
+        /* Sticky CTA Mobile */
+        .sticky-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--card);
+            border-top: 2px solid var(--border);
+            padding: 12px 20px;
+            box-shadow: 0 -4px 12px var(--shadow);
+            z-index: 99;
+        }
+
+        .sticky-cta .btn {
+            width: 100%;
+            padding: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .sticky-cta {
+                display: block;
+            }
+
+            .hero {
+                padding: 60px 0 40px;
+            }
+
+            .hero-bullets {
+                grid-template-columns: 1fr;
+            }
+
+            .plans-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-nav {
+                gap: 16px;
+            }
+
+            .header-nav a {
+                font-size: 13px;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .plans-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Meta Pixel Placeholder -->
+    <script>
+        // Meta Pixel Code Placeholder
+        // !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        // n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        // n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        // t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        // document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        // fbq('init', 'YOUR_PIXEL_ID');
+        // fbq('track', 'PageView');
+    </script>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Social Saúde</div>
+                <nav class="header-nav">
+                    <a href="#planos">Planos</a>
+                    <a href="#faq">FAQ</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Seu Instagram com constância, direção e organização — sem improviso</h1>
+            <h2>Conteúdo semanal + direção de gravação + agendamento. Ideal para clínicas que precisam de presença profissional e demanda local.</h2>
+            
+            <div class="hero-bullets">
+                <div class="hero-bullet">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <div>
+                        <h3>Constância Garantida</h3>
+                        <p>Conteúdo semanal agendado e organizado. Você para de postar no improviso.</p>
+                    </div>
+                </div>
+                <div class="hero-bullet">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <div>
+                        <h3>Direção Simples</h3>
+                        <p>Orientação clara do que gravar. Material produzido por você, organizado por nós.</p>
+                    </div>
+                </div>
+                <div class="hero-bullet">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <div>
+                        <h3>Sem Fidelidade</h3>
+                        <p>Contrato mês a mês. Cancele quando quiser, sem burocracias.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-cta">
+                <a href="#" class="btn btn-primary" id="cta-hero-whatsapp" data-event="click_whatsapp_hero">Quero um diagnóstico gratuito (15 min) no WhatsApp</a>
+                <a href="#formulario" class="btn btn-secondary" data-event="click_form_hero">Receber proposta por e-mail</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Como funciona</h2>
+            <p class="section-subtitle">Um processo simples e organizado para transformar sua presença digital</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Alinhamento Estratégico</h3>
+                    <p>Conversamos sobre seu público, especialidade e objetivos. Criamos seu calendário editorial mensal e definimos direcionamentos de conteúdo.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Produção e Aprovação</h3>
+                    <p>Você grava vídeos simples no celular seguindo nosso roteiro. Nós editamos, criamos posts e stories, e você aprova antes de publicar.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Agendamento e Relatório</h3>
+                    <p>Tudo agendado e publicado nas datas certas. Você recebe relatório mensal simples com principais métricas e insights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans Section -->
+    <section class="plans" id="planos">
+        <div class="container">
+            <h2 class="section-title">Escolha seu plano</h2>
+            <p class="section-subtitle">Planos flexíveis e transparentes. Sem fidelidade, mês a mês.</p>
+            
+            <div class="plans-grid">
+                <!-- Plan 1 -->
+                <div class="plan-card">
+                    <p class="plan-name">Plano 1</p>
+                    <h3 class="plan-title">Constância</h3>
+                    <div class="plan-price">R$ 499<small>/mês</small></div>
+                    <p class="plan-billing">Ideal para começar com presença regular</p>
+                    
+                    <ul class="plan-features">
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>2 posts por semana (8/mês)</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>2 reels por semana (8/mês)</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>6 stories por semana (24/mês)</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Agendamento completo</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>1 rodada de revisão</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Relatório mensal simples</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="btn btn-secondary plan-cta" data-plan="Constância - R$ 499/mês" data-event="click_plan_1">Escolher plano</button>
+                </div>
+
+                <!-- Plan 2 - Featured -->
+                <div class="plan-card featured">
+                    <div class="plan-badge">Mais Popular</div>
+                    <p class="plan-name">Plano 2</p>
+                    <h3 class="plan-title">Crescimento</h3>
+                    <div class="plan-price">R$ 999<small>/mês</small></div>
+                    <p class="plan-billing">Para clínicas que querem volume e engajamento</p>
+                    
+                    <ul class="plan-features">
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>3 posts por semana (12/mês)</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>3 reels por semana (12/mês)</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>10 stories por semana (40/mês)</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>1 alinhamento mensal (30-40 min)</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Calendário editorial completo</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Até 2 rodadas de revisão</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="btn btn-primary plan-cta" data-plan="Crescimento - R$ 999/mês" data-event="click_plan_2">Escolher plano</button>
+                </div>
+
+                <!-- Plan 3 -->
+                <div class="plan-card">
+                    <p class="plan-name">Plano 3</p>
+                    <h3 class="plan-title">Autoridade + Demanda</h3>
+                    <div class="plan-price">R$ 1.990<small>/mês</small></div>
+                    <p class="plan-billing">Volume alto + tráfego pago incluso</p>
+                    
+                    <ul class="plan-features">
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>4 posts por semana (16/mês)</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>4 reels por semana (16/mês)</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>15 stories por semana (60/mês)</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>2 alinhamentos/mês (quinzenal)</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>Tráfego pago básico incluso</strong></span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>1 campanha + 1 retarget simples</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="btn btn-secondary plan-cta" data-plan="Autoridade + Demanda - R$ 1.990/mês" data-event="click_plan_3">Escolher plano</button>
+                </div>
+            </div>
+
+            <!-- Add-on -->
+            <div class="addon">
+                <h3>Add-on: Tráfego Pago Básico (Planos 1 e 2)</h3>
+                <ul>
+                    <li>1 campanha principal otimizada</li>
+                    <li>1 otimização por semana (leve)</li>
+                    <li>Criativos reaproveitando conteúdos do mês</li>
+                    <li>Verba de anúncios paga à parte pelo cliente</li>
+                </ul>
+                <div class="addon-price">+R$ 390/mês</div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#formulario" class="btn btn-primary" data-event="click_plans_to_form">Ver todos os benefícios e solicitar proposta</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Included -->
+    <section class="included">
+        <div class="container">
+            <h2 class="section-title">O que está incluso e limites</h2>
+            <p class="section-subtitle">Transparência total sobre o que você recebe e como funciona</p>
+            
+            <div class="included-grid">
+                <div class="included-card">
+                    <h3>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Incluso em todos os planos
+                    </h3>
+                    <ul>
+                        <li>Calendário editorial mensal organizado</li>
+                        <li>Direcionamento de gravação (você grava no celular)</li>
+                        <li>Edição de reels e criação de posts</li>
+                        <li>Agendamento e publicação automática</li>
+                        <li>Relatório mensal com métricas principais</li>
+                        <li>Setup fundador: bio, destaques, templates base (primeiros clientes)</li>
+                    </ul>
+                </div>
+
+                <div class="included-card">
+                    <h3>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                        Limites e escopo
+                    </h3>
+                    <ul>
+                        <li>Sem captação presencial de vídeo; cliente grava com orientação</li>
+                        <li>Sem respostas de DM ou WhatsApp da clínica</li>
+                        <li>Revisões limitadas conforme plano escolhido</li>
+                        <li>Mês = 4 semanas; semanas extras viram banco de conteúdo</li>
+                        <li>Conteúdos seguem diretrizes de publicidade em saúde</li>
+                        <li>Sem promessas de resultados; resultados variam</li>
+                    </ul>
+                </div>
+
+                <div class="included-card">
+                    <h3>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                        Bônus para primeiros clientes
+                    </h3>
+                    <ul>
+                        <li>Setup fundador sem custo adicional</li>
+                        <li>Organização completa do perfil (bio, destaques)</li>
+                        <li>8 templates base personalizados</li>
+                        <li>Calendário editorial do primeiro mês detalhado</li>
+                        <li>Sem fidelidade: cancele quando quiser, mês a mês</li>
+                        <li>Início em até 7 dias após alinhamento</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">O que nossos clientes dizem</h2>
+            <p class="section-subtitle">Resultados reais de clínicas que confiaram no nosso trabalho</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Finalmente consegui manter constância no Instagram. Antes eu ficava semanas sem postar, agora tenho tudo organizado e meus pacientes comentam que estão vendo mais a clínica."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">DR</div>
+                        <div class="testimonial-info">
+                            <h4>Clínica Odontológica</h4>
+                            <p>São Paulo — SP</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"O que mais gostei foi a simplicidade. Gravo os vídeos no celular seguindo o roteiro deles, aprovo e pronto. Minha agenda teve um aumento visível de novos pacientes vindos do Instagram."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">FC</div>
+                        <div class="testimonial-info">
+                            <h4>Fisioterapeuta</h4>
+                            <p>Belo Horizonte — MG</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Estava perdida com redes sociais. Agora tenho calendário, conteúdo regular e um perfil profissional. Recomendo para qualquer clínica que quer organização sem complicação."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">CM</div>
+                        <div class="testimonial-info">
+                            <h4>Clínica de Estética</h4>
+                            <p>Curitiba — PR</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat">
+                    <h3>8-16</h3>
+                    <p>Posts e reels por mês (conforme plano)</p>
+                </div>
+                <div class="stat">
+                    <h3>24-60</h3>
+                    <p>Stories mensais mantendo presença</p>
+                </div>
+                <div class="stat">
+                    <h3>100%</h3>
+                    <p>Agendado e organizado semanalmente</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Perguntas frequentes</h2>
+            <p class="section-subtitle">Tire suas dúvidas antes de começar</p>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
+                        <span>Vocês garantem resultados?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer" id="faq-1">
+                        <div class="faq-answer-content">
+                            Não prometemos resultados específicos pois isso depende de diversos fatores: mercado local, especialidade, perfil do público, investimento em tráfego, etc. Nossa garantia é entregar constância, organização e conteúdo profissional. Resultados variam de cliente para cliente.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
+                        <span>Quanto tempo até ver os primeiros resultados?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer" id="faq-2">
+                        <div class="faq-answer-content">
+                            Geralmente entre 60 e 90 dias você começa a perceber mais interações, mensagens e reconhecimento da marca. Redes sociais exigem consistência. O importante é manter a presença regular e construir autoridade ao longo do tempo.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
+                        <span>Preciso gravar os vídeos ou vocês fazem isso?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer" id="faq-3">
+                        <div class="faq-answer-content">
+                            Você grava os vídeos no celular com nosso direcionamento claro (roteiro, dicas técnicas simples). Não fazemos captação presencial. A edição, montagem, legendas e postagem ficam por nossa conta. É simples e rápido.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
+                        <span>Posso pedir revisões ilimitadas?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer" id="faq-4">
+                        <div class="faq-answer-content">
+                            Não. As revisões são limitadas conforme o plano: 1 rodada (Plano Constância), até 2 rodadas (Plano Crescimento e Autoridade). Isso garante eficiência e preços acessíveis. Trabalhamos com briefing claro para acertar logo na primeira entrega.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
+                        <span>Como funciona o tráfego pago?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer" id="faq-5">
+                        <div class="faq-answer-content">
+                            No Plano Autoridade o tráfego pago está incluso. Nos Planos 1 e 2, você pode adicionar por +R$ 390/mês. Criamos 1 campanha principal e 1 retarget, com otimização semanal leve. A verba dos anúncios é paga diretamente ao Meta/Instagram pelo cliente.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-6">
+                        <span>Tem contrato de fidelidade?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer" id="faq-6">
+                        <div class="faq-answer-content">
+                            Não. Trabalhamos mês a mês. Se não estiver satisfeito, você pode cancelar a qualquer momento sem multas ou burocracias. Acreditamos que a qualidade do nosso trabalho é o que mantém nossos clientes, não contratos obrigatórios.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-7">
+                        <span>Atendem qualquer nicho da saúde?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer" id="faq-7">
+                        <div class="faq-answer-content">
+                            Sim. Atendemos médicos, dentistas, fisioterapeutas, clínicas de estética, nutricionistas, psicólogos e outros profissionais da saúde. Adaptamos o conteúdo respeitando as normas de cada conselho e diretrizes de publicidade médica.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-8">
+                        <span>O que NÃO está incluído no serviço?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer" id="faq-8">
+                        <div class="faq-answer-content">
+                            Não fazemos: captação presencial de vídeo, respostas de DM/WhatsApp da clínica, design de materiais gráficos além dos posts/stories (como panfletos, folders), gestão de outras redes além do Instagram, nem garantimos número de seguidores ou consultas marcadas.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="form-section" id="formulario">
+        <div class="container">
+            <h2 class="section-title">Solicite sua proposta personalizada</h2>
+            <p class="section-subtitle">Preencha o formulário e entraremos em contato em até 24 horas</p>
+            
+            <div class="form-container">
+                <form id="lead-form">
+                    <div class="form-group">
+                        <label for="nome" class="form-label">Nome completo *</label>
+                        <input type="text" id="nome" name="nome" class="form-input" required aria-required="true">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="whatsapp" class="form-label">WhatsApp *</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" class="form-input" placeholder="(11) 99999-9999" required aria-required="true">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" id="email" name="email" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cidade" class="form-label">Cidade *</label>
+                        <input type="text" id="cidade" name="cidade" class="form-input" placeholder="Ex: São Paulo - SP" required aria-required="true">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="especialidade" class="form-label">Especialidade/Área *</label>
+                        <input type="text" id="especialidade" name="especialidade" class="form-input" placeholder="Ex: Odontologia, Fisioterapia, Estética" required aria-required="true">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="plano" class="form-label">Plano de interesse *</label>
+                        <select id="plano" name="plano" class="form-select" required aria-required="true">
+                            <option value="">Selecione um plano</option>
+                            <option value="Constância - R$ 499/mês">Constância - R$ 499/mês</option>
+                            <option value="Crescimento - R$ 999/mês">Crescimento - R$ 999/mês</option>
+                            <option value="Autoridade + Demanda - R$ 1.990/mês">Autoridade + Demanda - R$ 1.990/mês</option>
+                            <option value="Ainda estou decidindo">Ainda estou decidindo</option>
+                        </select>
+                    </div>
+
+                    <!-- Hidden UTM Fields -->
+                    <input type="hidden" id="utm_source" name="utm_source">
+                    <input type="hidden" id="utm_campaign" name="utm_campaign">
+                    <input type="hidden" id="utm_content" name="utm_content">
+                    <input type="hidden" id="utm_medium" name="utm_medium">
+                    <input type="hidden" id="utm_term" name="utm_term">
+
+                    <button type="submit" class="btn btn-primary form-submit" data-event="submit_form">Receber proposta gratuita</button>
+
+                    <p class="form-note">
+                        Ao enviar, você concorda com nossa política de privacidade e tratamento de dados conforme LGPD. Seus dados serão usados apenas para contato comercial.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Social Saúde</h3>
+                    <p>Gestão de social media profissional para clínicas e profissionais da saúde. Constância, organização e resultados.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Importante</h3>
+                    <p>Resultados variam conforme mercado, público, especialidade e investimento. Não garantimos número específico de seguidores, consultas ou faturamento. Conteúdos respeitam diretrizes de publicidade em saúde.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Privacidade</h3>
+                    <p>Seus dados são protegidos conforme LGPD. Não compartilhamos informações com terceiros. Utilizamos dados apenas para contato comercial e prestação de serviço.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Social Saúde. Todos os direitos reservados. Mês considerado como 4 semanas para efeito de entrega de conteúdo.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky CTA Mobile -->
+    <div class="sticky-cta">
+        <a href="#" class="btn btn-primary" id="sticky-whatsapp" data-event="click_whatsapp_sticky">Diagnóstico Gratuito (15 min)</a>
+    </div>
+
+    <script>
+        // Tracking function
+        function track(eventName, data) {
+            console.log('Event:', eventName, data);
+            // fbq('track', eventName, data); // Uncomment when pixel is active
+        }
+
+        // Capture UTM parameters from URL
+        function captureUTMs() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const utmFields = ['utm_source', 'utm_campaign', 'utm_content', 'utm_medium', 'utm_term'];
+            
+            utmFields.forEach(field => {
+                const value = urlParams.get(field);
+                if (value) {
+                    const input = document.getElementById(field);
+                    if (input) {
+                        input.value = value;
+                    }
+                }
+            });
+        }
+
+        // Generate WhatsApp link
+        function generateWhatsAppLink(plan) {
+            const baseNumber = '5511999999999'; // Replace with actual WhatsApp number
+            const utmCampaign = document.getElementById('utm_campaign')?.value || '';
+            
+            let message = 'Olá! Gostaria de saber mais sobre o serviço de Social Media para clínicas.';
+            
+            if (plan) {
+                message += `%0A%0APlano de interesse: ${plan}`;
+            }
+            
+            if (utmCampaign) {
+                message += `%0ACampanha: ${utmCampaign}`;
+            }
+            
+            return `https://wa.me/${baseNumber}?text=${message}`;
+        }
+
+        // Handle plan selection buttons
+        document.querySelectorAll('.plan-cta').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const plan = this.getAttribute('data-plan');
+                const eventName = this.getAttribute('data-event');
+                
+                // Fill form plan select
+                const planSelect = document.getElementById('plano');
+                if (planSelect && plan) {
+                    planSelect.value = plan;
+                }
+                
+                // Track event
+                track(eventName, { plan: plan });
+                
+                // Scroll to form
+                document.getElementById('formulario').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Handle WhatsApp CTAs
+        document.querySelectorAll('#cta-hero-whatsapp, #sticky-whatsapp').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const eventName = this.getAttribute('data-event');
+                const planSelect = document.getElementById('plano');
+                const selectedPlan = planSelect?.value || '';
+                
+                track(eventName, { plan: selectedPlan });
+                
+                window.open(generateWhatsAppLink(selectedPlan), '_blank');
+            });
+        });
+
+        // Handle form submission
+        document.getElementById('lead-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+            
+            track('submit_form', data);
+            
+            // Here you would normally send data to your backend
+            console.log('Form submitted:', data);
+            
+            alert('Obrigado! Entraremos em contato em até 24 horas.');
+            this.reset();
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', function() {
+                const item = this.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all items
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('active');
+                    const answer = i.querySelector('.faq-answer');
+                    answer.style.maxHeight = null;
+                    i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                    const answer = item.querySelector('.faq-answer');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    this.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // Track all data-event clicks
+        document.querySelectorAll('[data-event]').forEach(element => {
+            element.addEventListener('click', function() {
+                const eventName = this.getAttribute('data-event');
+                track(eventName, {
+                    element: this.tagName,
+                    text: this.textContent.trim().substring(0, 50)
+                });
+            });
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            captureUTMs();
+            track('PageView', {
+                page: window.location.pathname,
+                utm_source: document.getElementById('utm_source')?.value || '',
+                utm_campaign: document.getElementById('utm_campaign')?.value || ''
+            });
+        });
+    </script>
+</body>
+</html>
