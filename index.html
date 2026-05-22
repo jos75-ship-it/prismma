@@ -301,6 +301,116 @@
             }
         }
 
+
+        /* Work Samples Section */
+        .work-samples {
+            padding: 100px 0;
+            background: var(--bg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .work-samples::before {
+            content: '';
+            position: absolute;
+            left: -180px;
+            top: 80px;
+            width: 420px;
+            height: 420px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.10) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .work-samples .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .work-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0 auto 16px;
+            padding: 8px 16px;
+            border-radius: 999px;
+            background: var(--accent);
+            color: var(--primary);
+            border: 1px solid rgba(15, 118, 110, 0.18);
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .work-eyebrow-wrap {
+            text-align: center;
+        }
+
+        .instagram-showcase {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 26px;
+            align-items: start;
+            margin-top: 58px;
+        }
+
+        .instagram-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 18px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s;
+        }
+
+        .instagram-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 32px rgba(15, 118, 110, 0.14);
+            border-color: rgba(15, 118, 110, 0.35);
+        }
+
+        .sample-label {
+            display: block;
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 14px;
+            text-align: center;
+        }
+
+        .instagram-frame {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 14px;
+            background: #ffffff;
+        }
+
+        .instagram-frame .instagram-media,
+        .instagram-frame iframe {
+            margin-left: auto !important;
+            margin-right: auto !important;
+            max-width: 100% !important;
+        }
+
+        .work-cta {
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        .work-note {
+            font-size: 14px;
+            color: var(--muted);
+            max-width: 680px;
+            margin: 18px auto 0;
+            line-height: 1.7;
+        }
+
         /* Plans Section */
         .plans {
             padding: 100px 0;
@@ -795,6 +905,19 @@
                 grid-template-columns: 1fr;
             }
 
+
+            .instagram-showcase {
+                grid-template-columns: 1fr;
+                max-width: 420px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .instagram-card {
+                padding: 14px;
+            }
+
+
             .header-nav {
                 gap: 16px;
             }
@@ -849,6 +972,7 @@
                     <img src="img/logo prismma.png" alt="Prismma Social">
                 </div>
                 <nav class="header-nav">
+                    <a href="#trabalhos">Trabalhos</a>
                     <a href="#planos">Planos</a>
                     <a href="#faq">FAQ</a>
                 </nav>
@@ -921,6 +1045,46 @@
                     <h3>Agendamento e Relatório</h3>
                     <p>Tudo agendado e publicado nas datas certas. Você recebe relatório mensal simples com principais métricas e insights.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Work Samples -->
+    <section class="work-samples" id="trabalhos">
+        <div class="container">
+            <div class="work-eyebrow-wrap">
+                <span class="work-eyebrow">Amostra do nosso trabalho</span>
+            </div>
+            <h2 class="section-title">Conteúdos reais, com apresentação profissional</h2>
+            <p class="section-subtitle">Veja exemplos de posts produzidos para comunicar autoridade, clareza e confiança sem perder a naturalidade do profissional.</p>
+
+            <div class="instagram-showcase">
+                <article class="instagram-card">
+                    <span class="sample-label">Vídeo 01</span>
+                    <div class="instagram-frame">
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DYkI63otjwE/" data-instgrm-version="14" style="background:#fff; border:0; border-radius:12px; box-shadow:none; margin:0 auto; max-width:540px; min-width:326px; padding:0; width:100%;"></blockquote>
+                    </div>
+                </article>
+
+                <article class="instagram-card">
+                    <span class="sample-label">Vídeo 02</span>
+                    <div class="instagram-frame">
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DYkJs_bt3cf/" data-instgrm-version="14" style="background:#fff; border:0; border-radius:12px; box-shadow:none; margin:0 auto; max-width:540px; min-width:326px; padding:0; width:100%;"></blockquote>
+                    </div>
+                </article>
+
+                <article class="instagram-card">
+                    <span class="sample-label">Vídeo 03</span>
+                    <div class="instagram-frame">
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DXtz_VaDfNv/" data-instgrm-version="14" style="background:#fff; border:0; border-radius:12px; box-shadow:none; margin:0 auto; max-width:540px; min-width:326px; padding:0; width:100%;"></blockquote>
+                    </div>
+                </article>
+            </div>
+
+            <div class="work-cta">
+                <a href="#formulario" class="btn btn-primary" data-event="click_work_samples_to_form">Quero conteúdos assim para minha clínica</a>
+                <p class="work-note">Os exemplos acima são incorporados diretamente do Instagram. Caso algum post esteja privado ou indisponível, o bloco pode não carregar para todos os visitantes.</p>
             </div>
         </div>
     </section>
@@ -1408,6 +1572,8 @@
     <div class="sticky-cta">
         <a href="#" class="btn btn-primary" id="sticky-whatsapp" data-event="click_whatsapp_sticky">Análise Gratuita (15 min)</a>
     </div>
+
+    <script async src="https://www.instagram.com/embed.js"></script>
 
     <script>
         // Tracking function
