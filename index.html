@@ -529,49 +529,6 @@
             width: 100%;
         }
 
-        /* Add-on Section */
-        .addon {
-            background: var(--gradient-2);
-            border: 2px solid var(--primary);
-            border-radius: 12px;
-            padding: 30px;
-            margin-top: 50px;
-        }
-
-        .addon h3 {
-            font-size: 20px;
-            margin-bottom: 16px;
-            color: var(--primary);
-            font-weight: 700;
-        }
-
-        .addon ul {
-            list-style: none;
-            font-size: 15px;
-            color: var(--text);
-        }
-
-        .addon li {
-            padding: 8px 0;
-            padding-left: 28px;
-            position: relative;
-        }
-
-        .addon li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: bold;
-        }
-
-        .addon-price {
-            font-size: 28px;
-            font-weight: 800;
-            color: var(--primary);
-            margin-top: 20px;
-        }
-
         /* What's Included Section */
         .included {
             padding: 100px 0;
@@ -774,67 +731,6 @@
             color: var(--muted);
         }
 
-        /* Form Section */
-        .form-section {
-            padding: 100px 0;
-            background: var(--bg);
-        }
-
-        .form-container {
-            max-width: 650px;
-            margin: 50px auto 0;
-            background: var(--card);
-            padding: 50px;
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-        }
-
-        .form-group {
-            margin-bottom: 26px;
-        }
-
-        .form-label {
-            display: block;
-            font-size: 15px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: var(--text);
-        }
-
-        .form-input,
-        .form-select {
-            width: 100%;
-            padding: 14px 18px;
-            font-size: 16px;
-            border: 2px solid var(--border);
-            border-radius: 10px;
-            background: var(--bg);
-            color: var(--text);
-            font-family: inherit;
-            transition: all 0.2s;
-        }
-
-        .form-input:focus,
-        .form-select:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.1);
-        }
-
-        .form-submit {
-            width: 100%;
-            margin-top: 12px;
-        }
-
-        .form-note {
-            font-size: 13px;
-            color: var(--muted);
-            margin-top: 20px;
-            text-align: center;
-            line-height: 1.6;
-        }
-
         /* Footer */
         footer {
             background: var(--text);
@@ -888,9 +784,39 @@
             padding: 16px;
         }
 
+        /* Floating WhatsApp CTA Desktop */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+            z-index: 98;
+            transition: transform 0.2s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+        }
+
         @media (max-width: 768px) {
             .sticky-cta {
                 display: block;
+            }
+
+            .whatsapp-float {
+                display: none;
+            }
+
+            #cta-header-whatsapp {
+                display: none;
             }
 
             .hero {
@@ -975,6 +901,7 @@
                     <a href="#trabalhos">Trabalhos</a>
                     <a href="#planos">Planos</a>
                     <a href="#faq">FAQ</a>
+                    <a href="#" class="btn btn-primary" id="cta-header-whatsapp" data-event="click_whatsapp_header" style="padding: 10px 20px; font-size: 14px;">Falar no WhatsApp</a>
                 </nav>
             </div>
         </div>
@@ -1011,15 +938,15 @@
                     </svg>
                     <div>
                         <h3>Sem Fidelidade</h3>
-                        <p>Contrato mês a mês. Cancele quando quiser, sem burocracias nem multas.</p>
+                        <p>Contrato mês a mês, cancele quando quiser. Nos planos com tráfego pago, recomendamos ao menos 2-3 meses para dar tempo de gerar resultado.</p>
                     </div>
                 </div>
             </div>
 
             <div class="hero-cta">
                 <a href="#" class="btn btn-primary" id="cta-hero-whatsapp" data-event="click_whatsapp_hero">Quero uma análise gratuita do meu Instagram (15 min)</a>
-                <a href="#formulario" class="btn btn-secondary" data-event="click_form_hero">Receber proposta por e-mail</a>
             </div>
+            <p style="text-align: center; margin-top: 20px; font-size: 15px; color: var(--muted);">Planos a partir de <strong style="color: var(--primary);">R$ 799/mês</strong></p>
         </div>
     </section>
 
@@ -1077,13 +1004,13 @@
                 <article class="instagram-card">
                     <span class="sample-label">Vídeo 03</span>
                     <div class="instagram-frame">
-                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DXtz_VaDfNv/" data-instgrm-version="14" style="background:#fff; border:0; border-radius:12px; box-shadow:none; margin:0 auto; max-width:540px; min-width:326px; padding:0; width:100%;"></blockquote>
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DbENGzDGkEA/?img_index=1" data-instgrm-version="14" style="background:#fff; border:0; border-radius:12px; box-shadow:none; margin:0 auto; max-width:540px; min-width:326px; padding:0; width:100%;"></blockquote>
                     </div>
                 </article>
             </div>
 
             <div class="work-cta">
-                <a href="#formulario" class="btn btn-primary" data-event="click_work_samples_to_form">Quero conteúdos assim para minha clínica</a>
+                <a href="#" class="btn btn-primary cta-whatsapp-generic" data-event="click_work_samples_whatsapp">Quero conteúdos assim para minha clínica</a>
                 <p class="work-note">Os exemplos acima são incorporados diretamente do Instagram. Caso algum post esteja privado ou indisponível, o bloco pode não carregar para todos os visitantes.</p>
             </div>
         </div>
@@ -1099,166 +1026,159 @@
                 <!-- Plan 1 -->
                 <div class="plan-card">
                     <p class="plan-name">Plano 1</p>
-                    <h3 class="plan-title">Constância</h3>
-                    <div class="plan-price">R$ 499<small>/mês</small></div>
-                    <p class="plan-billing">Ideal para começar com presença regular</p>
-                    
+                    <h3 class="plan-title">Essencial</h3>
+                    <div class="plan-price">R$ 799<small>/mês</small></div>
+                    <p class="plan-billing">Ideal para organizar e profissionalizar sua presença</p>
+
                     <ul class="plan-features">
                         <li>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span>2 posts por semana (8/mês)</span>
+                            <span>Reestruturação de perfil inclusa</span>
                         </li>
                         <li>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span>2 reels por semana (8/mês)</span>
+                            <span>10 criativos mensais</span>
                         </li>
                         <li>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span>6 stories por semana (24/mês)</span>
+                            <span>Reuniões mensais</span>
                         </li>
                         <li>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span>Agendamento completo</span>
+                            <span>Suporte via WhatsApp incluso</span>
                         </li>
                         <li>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span>1 rodada de revisão</span>
-                        </li>
-                        <li>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span>Relatório mensal simples</span>
+                            <span>Sem fidelidade</span>
                         </li>
                     </ul>
-                    
-                    <button class="btn btn-secondary plan-cta" data-plan="Constância - R$ 499/mês" data-event="click_plan_1">Escolher plano</button>
+
+                    <button class="btn btn-secondary plan-cta" data-plan="Essencial - R$ 799/mês" data-event="click_plan_1">Escolher plano</button>
                 </div>
 
                 <!-- Plan 2 - Featured -->
                 <div class="plan-card featured">
                     <div class="plan-badge">Mais Popular</div>
                     <p class="plan-name">Plano 2</p>
-                    <h3 class="plan-title">Crescimento</h3>
-                    <div class="plan-price">R$ 999<small>/mês</small></div>
-                    <p class="plan-billing">Para clínicas que querem volume e engajamento</p>
-                    
+                    <h3 class="plan-title">Tráfego</h3>
+                    <div class="plan-price">R$ 1.599<small>/mês</small></div>
+                    <p class="plan-billing">Conteúdo + tráfego pago para gerar demanda</p>
+
                     <ul class="plan-features">
                         <li>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span>3 posts por semana (12/mês)</span>
+                            <span>Reestruturação de perfil inclusa</span>
                         </li>
                         <li>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span>3 reels por semana (12/mês)</span>
+                            <span>10 criativos mensais</span>
                         </li>
                         <li>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span>10 stories por semana (40/mês)</span>
+                            <span><strong>Gestão de tráfego pago inclusa</strong></span>
                         </li>
                         <li>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span>1 alinhamento mensal (30-40 min)</span>
+                            <span>Reuniões quinzenais</span>
                         </li>
                         <li>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span>Calendário editorial completo</span>
+                            <span>Suporte via WhatsApp incluso</span>
                         </li>
                         <li>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span>Até 2 rodadas de revisão</span>
+                            <span>Sem fidelidade*</span>
                         </li>
                     </ul>
-                    
-                    <button class="btn btn-primary plan-cta" data-plan="Crescimento - R$ 999/mês" data-event="click_plan_2">Escolher plano</button>
+
+                    <button class="btn btn-primary plan-cta" data-plan="Tráfego - R$ 1.599/mês" data-event="click_plan_2">Escolher plano</button>
                 </div>
 
                 <!-- Plan 3 -->
                 <div class="plan-card">
                     <p class="plan-name">Plano 3</p>
-                    <h3 class="plan-title">Autoridade + Demanda</h3>
-                    <div class="plan-price">R$ 1.990<small>/mês</small></div>
-                    <p class="plan-billing">Volume alto + tráfego pago incluso</p>
-                    
+                    <h3 class="plan-title">Autoridade</h3>
+                    <div class="plan-price">R$ 2.999<small>/mês</small></div>
+                    <p class="plan-billing">Conteúdo, tráfego e planejamento estratégico</p>
+
                     <ul class="plan-features">
                         <li>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span>4 posts por semana (16/mês)</span>
+                            <span>Reestruturação de perfil inclusa</span>
                         </li>
                         <li>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span>4 reels por semana (16/mês)</span>
+                            <span>15 criativos mensais</span>
                         </li>
                         <li>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span>15 stories por semana (60/mês)</span>
+                            <span><strong>Gestão de tráfego pago inclusa</strong></span>
                         </li>
                         <li>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span>2 alinhamentos/mês (quinzenal)</span>
+                            <span><strong>Planejamento estratégico de crescimento</strong></span>
                         </li>
                         <li>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span><strong>Tráfego pago básico incluso</strong></span>
+                            <span>Reuniões quinzenais</span>
                         </li>
                         <li>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span>1 campanha + 1 retarget simples</span>
+                            <span>Suporte via WhatsApp incluso</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Sem fidelidade*</span>
                         </li>
                     </ul>
-                    
-                    <button class="btn btn-secondary plan-cta" data-plan="Autoridade + Demanda - R$ 1.990/mês" data-event="click_plan_3">Escolher plano</button>
+
+                    <button class="btn btn-secondary plan-cta" data-plan="Autoridade - R$ 2.999/mês" data-event="click_plan_3">Escolher plano</button>
                 </div>
             </div>
 
-            <!-- Add-on -->
-            <div class="addon">
-                <h3>Add-on: Tráfego Pago Básico (Planos 1 e 2)</h3>
-                <ul>
-                    <li>1 campanha principal otimizada</li>
-                    <li>1 otimização por semana (leve)</li>
-                    <li>Criativos reaproveitando conteúdos do mês</li>
-                    <li>Verba de anúncios paga à parte pelo cliente</li>
-                </ul>
-                <div class="addon-price">+R$ 390/mês</div>
-            </div>
+            <p style="text-align: center; margin-top: 30px; font-size: 14px; color: var(--muted); max-width: 700px; margin-left: auto; margin-right: auto;">
+                *Sem contrato de fidelidade. Recomendamos permanência mínima de 2-3 meses nos planos com tráfego pago para dar tempo de gerar resultado (não é cláusula contratual).
+                A verba de anúncios (Meta/Instagram) é paga separadamente pelo cliente, direto à plataforma.
+            </p>
 
-            <div style="text-align: center; margin-top: 60px;">
-                <a href="#formulario" class="btn btn-primary" data-event="click_plans_to_form">Ver todos os benefícios e solicitar proposta</a>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#" class="btn btn-primary cta-whatsapp-generic" data-event="click_plans_to_whatsapp">Ver todos os benefícios e falar no WhatsApp</a>
             </div>
         </div>
     </section>
@@ -1280,10 +1200,10 @@
                     <ul>
                         <li>Calendário editorial mensal organizado</li>
                         <li>Direcionamento de gravação (você grava no celular)</li>
-                        <li>Edição de reels e criação de posts</li>
+                        <li>Edição de criativos (posts e reels) conforme o plano</li>
                         <li>Agendamento e publicação automática</li>
                         <li>Relatório mensal com métricas principais</li>
-                        <li>Setup fundador: bio, destaques, templates base (primeiros clientes)</li>
+                        <li>Suporte via WhatsApp para dúvidas sobre o serviço</li>
                     </ul>
                 </div>
 
@@ -1298,11 +1218,8 @@
                     </h3>
                     <ul>
                         <li>Sem captação presencial; cliente grava com orientação</li>
-                        <li>Sem respostas de DM ou WhatsApp da clínica</li>
-                        <li>Revisões limitadas conforme plano escolhido</li>
-                        <li>Mês = 4 semanas; semanas extras viram banco de conteúdo</li>
+                        <li>Suporte via WhatsApp cobre dúvidas sobre o serviço contratado — não é atendimento aos pacientes da clínica</li>
                         <li>Conteúdos respeitam diretrizes de publicidade em saúde</li>
-                        <li>Sem promessas de resultados; resultados variam</li>
                     </ul>
                 </div>
 
@@ -1335,10 +1252,6 @@
             <p class="section-subtitle">Experiência comprovada e garantias sólidas para sua tranquilidade</p>
             
             <div class="stats">
-                <div class="stat">
-                    <h3>+100k</h3>
-                    <p>Seguidores já gerenciados em contas da área da saúde</p>
-                </div>
                 <div class="stat">
                     <h3>7 dias</h3>
                     <p>Prazo máximo para início após alinhamento</p>
@@ -1412,20 +1325,6 @@
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
-                        <span>Posso pedir revisões ilimitadas?</span>
-                        <svg class="faq-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
-                    <div class="faq-answer" id="faq-4">
-                        <div class="faq-answer-content">
-                            Não. As revisões são limitadas conforme o plano: 1 rodada (Plano Constância), até 2 rodadas (Plano Crescimento e Autoridade). Isso garante eficiência e preços acessíveis. Trabalhamos com briefing claro para acertar logo na primeira entrega.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
                     <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
                         <span>Como funciona o tráfego pago?</span>
                         <svg class="faq-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1434,7 +1333,7 @@
                     </button>
                     <div class="faq-answer" id="faq-5">
                         <div class="faq-answer-content">
-                            No Plano Autoridade o tráfego pago está incluso. Nos Planos 1 e 2, você pode adicionar por +R$ 390/mês. Criamos 1 campanha principal e 1 retarget, com otimização semanal leve. A verba dos anúncios é paga diretamente ao Meta/Instagram pelo cliente.
+                            Nos planos Tráfego e Autoridade, a gestão de tráfego pago já está inclusa — não é mais um add-on separado. Cuidamos da criação e otimização das campanhas no Meta/Instagram. A verba investida nos anúncios é paga separadamente pelo cliente, direto à plataforma.
                         </div>
                     </div>
                 </div>
@@ -1448,7 +1347,7 @@
                     </button>
                     <div class="faq-answer" id="faq-6">
                         <div class="faq-answer-content">
-                            Não. Trabalhamos mês a mês. Se não estiver satisfeito, você pode cancelar a qualquer momento sem multas ou burocracias. Acreditamos que a qualidade do nosso trabalho é o que mantém nossos clientes, não contratos obrigatórios.
+                            Não. Trabalhamos mês a mês e você pode cancelar quando quiser, sem multas ou burocracias. Nos planos com tráfego pago (Tráfego e Autoridade), recomendamos permanência mínima de 2-3 meses para dar tempo de a campanha gerar resultado — mas isso é uma recomendação, não uma cláusula contratual.
                         </div>
                     </div>
                 </div>
@@ -1476,71 +1375,10 @@
                     </button>
                     <div class="faq-answer" id="faq-8">
                         <div class="faq-answer-content">
-                            Não fazemos: captação presencial de vídeo, respostas de DM/WhatsApp da clínica, design de materiais gráficos além dos posts/stories (como panfletos, folders), gestão de outras redes além do Instagram, nem garantimos número de seguidores ou consultas marcadas.
+                            Não fazemos: captação presencial de vídeo, atendimento aos pacientes da clínica via DM ou WhatsApp (nosso suporte via WhatsApp é para dúvidas sobre o serviço contratado), design de materiais gráficos além dos posts/stories (como panfletos, folders), gestão de outras redes além do Instagram, nem garantimos número de seguidores ou consultas marcadas.
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Form Section -->
-    <section class="form-section" id="formulario">
-        <div class="container">
-            <h2 class="section-title">Solicite sua proposta personalizada</h2>
-            <p class="section-subtitle">Preencha o formulário e entraremos em contato em até 24 horas</p>
-            
-            <div class="form-container">
-                <form id="lead-form">
-                    <div class="form-group">
-                        <label for="nome" class="form-label">Nome completo *</label>
-                        <input type="text" id="nome" name="nome" class="form-input" required aria-required="true">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="whatsapp" class="form-label">WhatsApp *</label>
-                        <input type="tel" id="whatsapp" name="whatsapp" class="form-input" placeholder="(11) 99999-9999" required aria-required="true">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email" class="form-label">E-mail</label>
-                        <input type="email" id="email" name="email" class="form-input">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="cidade" class="form-label">Cidade *</label>
-                        <input type="text" id="cidade" name="cidade" class="form-input" placeholder="Ex: São Paulo - SP" required aria-required="true">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="especialidade" class="form-label">Especialidade/Área *</label>
-                        <input type="text" id="especialidade" name="especialidade" class="form-input" placeholder="Ex: Odontologia, Fisioterapia, Estética" required aria-required="true">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="plano" class="form-label">Plano de interesse *</label>
-                        <select id="plano" name="plano" class="form-select" required aria-required="true">
-                            <option value="">Selecione um plano</option>
-                            <option value="Constância - R$ 499/mês">Constância - R$ 499/mês</option>
-                            <option value="Crescimento - R$ 999/mês">Crescimento - R$ 999/mês</option>
-                            <option value="Autoridade + Demanda - R$ 1.990/mês">Autoridade + Demanda - R$ 1.990/mês</option>
-                            <option value="Ainda estou decidindo">Ainda estou decidindo</option>
-                        </select>
-                    </div>
-
-                    <!-- Hidden UTM Fields -->
-                    <input type="hidden" id="utm_source" name="utm_source">
-                    <input type="hidden" id="utm_campaign" name="utm_campaign">
-                    <input type="hidden" id="utm_content" name="utm_content">
-                    <input type="hidden" id="utm_medium" name="utm_medium">
-                    <input type="hidden" id="utm_term" name="utm_term">
-
-                    <button type="submit" class="btn btn-primary form-submit" data-event="submit_form">Receber proposta gratuita</button>
-
-                    <p class="form-note">
-                        Ao enviar, você concorda com nossa política de privacidade e tratamento de dados conforme LGPD. Seus dados serão usados apenas para contato comercial.
-                    </p>
-                </form>
             </div>
         </div>
     </section>
@@ -1563,7 +1401,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Prismma Social. Todos os direitos reservados. Mês considerado como 4 semanas para efeito de entrega de conteúdo.</p>
+                <p>&copy; 2025 Prismma Social. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
@@ -1572,6 +1410,13 @@
     <div class="sticky-cta">
         <a href="#" class="btn btn-primary" id="sticky-whatsapp" data-event="click_whatsapp_sticky">Análise Gratuita (15 min)</a>
     </div>
+
+    <!-- Floating WhatsApp CTA Desktop -->
+    <a href="#" class="whatsapp-float" id="cta-float-whatsapp" data-event="click_whatsapp_float" aria-label="Falar no WhatsApp">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm5.8 14.16c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.11.11-1.79-.11-.41-.13-.94-.31-1.62-.6-2.84-1.23-4.7-4.1-4.84-4.29-.14-.19-1.16-1.54-1.16-2.94 0-1.4.73-2.08 1-2.37.26-.28.57-.35.76-.35.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.14.07.14.11.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.36-.42.49-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.61-.07.16-.19.7-.81.89-1.09.19-.28.37-.23.63-.14.26.09 1.66.78 1.94.92.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/>
+        </svg>
+    </a>
 
     <script async src="https://www.instagram.com/embed.js"></script>
 
@@ -1583,88 +1428,52 @@
         }
 
         // Capture UTM parameters from URL
+        let capturedUTMCampaign = '';
         function captureUTMs() {
             const urlParams = new URLSearchParams(window.location.search);
-            const utmFields = ['utm_source', 'utm_campaign', 'utm_content', 'utm_medium', 'utm_term'];
-            
-            utmFields.forEach(field => {
-                const value = urlParams.get(field);
-                if (value) {
-                    const input = document.getElementById(field);
-                    if (input) {
-                        input.value = value;
-                    }
-                }
-            });
+            capturedUTMCampaign = urlParams.get('utm_campaign') || '';
         }
 
         // Generate WhatsApp link
         function generateWhatsAppLink(plan) {
-            const baseNumber = '5512987089201'; // Real WhatsApp number
-            const utmCampaign = document.getElementById('utm_campaign')?.value || '';
-            
+            const baseNumber = '5519992365415'; // Real WhatsApp number
+
             let message = 'Olá! Gostaria de saber mais sobre o serviço de Social Media para clínicas.';
-            
+
             if (plan) {
                 message += `%0A%0APlano de interesse: ${plan}`;
             }
-            
-            if (utmCampaign) {
-                message += `%0ACampanha: ${utmCampaign}`;
+
+            if (capturedUTMCampaign) {
+                message += `%0ACampanha: ${capturedUTMCampaign}`;
             }
-            
+
             return `https://wa.me/${baseNumber}?text=${message}`;
         }
 
-        // Handle plan selection buttons
+        // Handle plan selection buttons ("Escolher plano")
         document.querySelectorAll('.plan-cta').forEach(button => {
             button.addEventListener('click', function(e) {
                 e.preventDefault();
                 const plan = this.getAttribute('data-plan');
                 const eventName = this.getAttribute('data-event');
-                
-                // Fill form plan select
-                const planSelect = document.getElementById('plano');
-                if (planSelect && plan) {
-                    planSelect.value = plan;
-                }
-                
-                // Track event
+
                 track(eventName, { plan: plan });
-                
-                // Scroll to form
-                document.getElementById('formulario').scrollIntoView({ behavior: 'smooth' });
+
+                window.open(generateWhatsAppLink(plan), '_blank');
             });
         });
 
-        // Handle WhatsApp CTAs
-        document.querySelectorAll('#cta-hero-whatsapp, #sticky-whatsapp').forEach(button => {
+        // Handle generic WhatsApp CTAs (no specific plan attached)
+        document.querySelectorAll('#cta-hero-whatsapp, #cta-header-whatsapp, #sticky-whatsapp, #cta-float-whatsapp, .cta-whatsapp-generic').forEach(button => {
             button.addEventListener('click', function(e) {
                 e.preventDefault();
                 const eventName = this.getAttribute('data-event');
-                const planSelect = document.getElementById('plano');
-                const selectedPlan = planSelect?.value || '';
-                
-                track(eventName, { plan: selectedPlan });
-                
-                window.open(generateWhatsAppLink(selectedPlan), '_blank');
-            });
-        });
 
-        // Handle form submission
-        document.getElementById('lead-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
-            
-            track('submit_form', data);
-            
-            // Here you would normally send data to your backend
-            console.log('Form submitted:', data);
-            
-            alert('Obrigado! Entraremos em contato em até 24 horas.');
-            this.reset();
+                track(eventName, {});
+
+                window.open(generateWhatsAppLink(''), '_blank');
+            });
         });
 
         // FAQ Accordion
@@ -1707,8 +1516,7 @@
             captureUTMs();
             track('PageView', {
                 page: window.location.pathname,
-                utm_source: document.getElementById('utm_source')?.value || '',
-                utm_campaign: document.getElementById('utm_campaign')?.value || ''
+                utm_campaign: capturedUTMCampaign
             });
         });
     </script>
