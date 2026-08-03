@@ -48,7 +48,7 @@
         header {
             background: var(--card);
             border-bottom: 1px solid var(--border);
-            padding: 16px 0;
+            padding: 0;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -56,20 +56,26 @@
         }
 
         .header-content {
+            height: 76px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 32px;
         }
 
         .logo-container {
+            flex: 0 0 auto;
+            height: 100%;
             display: flex;
             align-items: center;
-            gap: 12px;
+            justify-content: flex-start;
         }
 
         .logo-container img {
-            height: 40px;
+            display: block;
+            height: 38px;
             width: auto;
+            object-fit: contain;
         }
 
         .logo {
@@ -80,16 +86,31 @@
         }
 
         .header-nav {
+            margin-left: auto;
+            height: 100%;
             display: flex;
+            align-items: center;
+            justify-content: flex-end;
             gap: 24px;
         }
 
         .header-nav a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 44px;
             color: var(--text);
             text-decoration: none;
             font-size: 14px;
             font-weight: 500;
+            line-height: 1;
             transition: color 0.2s;
+        }
+
+        .header-nav .btn {
+            height: 44px;
+            padding: 0 22px;
+            line-height: 1;
         }
 
         .header-nav a:hover {
@@ -325,6 +346,7 @@
         .work-samples .container {
             position: relative;
             z-index: 1;
+            max-width: 1460px;
         }
 
         .work-eyebrow {
@@ -349,13 +371,17 @@
 
         .instagram-showcase {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 26px;
+            grid-template-columns: repeat(3, minmax(360px, 1fr));
+            gap: 28px;
             align-items: start;
+            justify-content: center;
             margin-top: 58px;
         }
 
         .instagram-card {
+            min-width: 0;
+            width: 100%;
+            overflow: visible;
             background: var(--card);
             border: 1px solid var(--border);
             border-radius: 18px;
@@ -386,16 +412,41 @@
             justify-content: center;
             align-items: flex-start;
             width: 100%;
-            overflow: hidden;
-            border-radius: 14px;
+            min-width: 0;
+            overflow: visible;
             background: #ffffff;
         }
 
         .instagram-frame .instagram-media,
         .instagram-frame iframe {
-            margin-left: auto !important;
-            margin-right: auto !important;
-            max-width: 100% !important;
+            display: block !important;
+            width: 100% !important;
+            min-width: 0 !important;
+            max-width: 540px !important;
+            margin: 0 auto !important;
+            border: 0 !important;
+        }
+
+        /* O Instagram define a altura do iframe. Não sobrescrever esse valor
+           evita cortes na legenda, curtidas e área de comentários. */
+        .instagram-frame iframe {
+            overflow: visible !important;
+        }
+
+        .instagram-fallback {
+            min-height: 520px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--primary);
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            background: var(--accent);
         }
 
         .work-cta {
@@ -806,6 +857,15 @@
             transform: scale(1.08);
         }
 
+        @media (max-width: 1280px) and (min-width: 769px) {
+            .instagram-showcase {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                max-width: 900px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
         @media (max-width: 768px) {
             .sticky-cta {
                 display: block;
@@ -844,11 +904,21 @@
             }
 
 
+            .header-content {
+                height: 68px;
+                gap: 18px;
+            }
+
+            .logo-container img {
+                height: 34px;
+            }
+
             .header-nav {
-                gap: 16px;
+                gap: 14px;
             }
 
             .header-nav a {
+                min-height: 40px;
                 font-size: 13px;
             }
 
@@ -901,7 +971,7 @@
                     <a href="#trabalhos">Trabalhos</a>
                     <a href="#planos">Planos</a>
                     <a href="#faq">FAQ</a>
-                    <a href="#" class="btn btn-primary" id="cta-header-whatsapp" data-event="click_whatsapp_header" style="padding: 10px 20px; font-size: 14px;">Falar no WhatsApp</a>
+                    <a href="#" class="btn btn-primary" id="cta-header-whatsapp" data-event="click_whatsapp_header">Falar no WhatsApp</a>
                 </nav>
             </div>
         </div>
@@ -990,21 +1060,21 @@
                 <article class="instagram-card">
                     <span class="sample-label">Vídeo 01</span>
                     <div class="instagram-frame">
-                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DYkI63otjwE/" data-instgrm-version="14" style="background:#fff; border:0; border-radius:12px; box-shadow:none; margin:0 auto; max-width:540px; min-width:326px; padding:0; width:100%;"></blockquote>
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DYkI63otjwE/" data-instgrm-version="14" data-instgrm-captioned style="background:#fff; border:0; border-radius:12px; box-shadow:none; margin:0 auto; max-width:540px; min-width:0; padding:0; width:100%;"><a class="instagram-fallback" href="https://www.instagram.com/p/DYkI63otjwE/" target="_blank" rel="noopener noreferrer">Ver vídeo no Instagram</a></blockquote>
                     </div>
                 </article>
 
                 <article class="instagram-card">
-                    <span class="sample-label">Vídeo 02</span>
+                    <span class="sample-label">Carrossel 02</span>
                     <div class="instagram-frame">
-                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DYkJs_bt3cf/" data-instgrm-version="14" style="background:#fff; border:0; border-radius:12px; box-shadow:none; margin:0 auto; max-width:540px; min-width:326px; padding:0; width:100%;"></blockquote>
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DXtz_VaDfNv/" data-instgrm-version="14" data-instgrm-captioned style="background:#fff; border:0; border-radius:12px; box-shadow:none; margin:0 auto; max-width:540px; min-width:0; padding:0; width:100%;"><a class="instagram-fallback" href="https://www.instagram.com/p/DXtz_VaDfNv/" target="_blank" rel="noopener noreferrer">Ver carrossel no Instagram</a></blockquote>
                     </div>
                 </article>
 
                 <article class="instagram-card">
-                    <span class="sample-label">Vídeo 03</span>
+                    <span class="sample-label">Carrossel 03</span>
                     <div class="instagram-frame">
-                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DbENGzDGkEA/?img_index=1" data-instgrm-version="14" style="background:#fff; border:0; border-radius:12px; box-shadow:none; margin:0 auto; max-width:540px; min-width:326px; padding:0; width:100%;"></blockquote>
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DbENGzDGkEA/" data-instgrm-version="14" data-instgrm-captioned style="background:#fff; border:0; border-radius:12px; box-shadow:none; margin:0 auto; max-width:540px; min-width:0; padding:0; width:100%;"><a class="instagram-fallback" href="https://www.instagram.com/p/DbENGzDGkEA/" target="_blank" rel="noopener noreferrer">Ver carrossel no Instagram</a></blockquote>
                     </div>
                 </article>
             </div>
@@ -1418,7 +1488,7 @@
         </svg>
     </a>
 
-    <script async src="https://www.instagram.com/embed.js"></script>
+    <script async defer src="https://www.instagram.com/embed.js" onload="window.instgrm && window.instgrm.Embeds.process();"></script>
 
     <script>
         // Tracking function
@@ -1518,6 +1588,17 @@
                 page: window.location.pathname,
                 utm_campaign: capturedUTMCampaign
             });
+
+            // Reprocess Instagram embeds in case the async library finishes after the page.
+            const processInstagramEmbeds = () => {
+                if (window.instgrm && window.instgrm.Embeds) {
+                    window.instgrm.Embeds.process();
+                }
+            };
+
+            processInstagramEmbeds();
+            setTimeout(processInstagramEmbeds, 600);
+            setTimeout(processInstagramEmbeds, 1800);
         });
     </script>
 </body>
