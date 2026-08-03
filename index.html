@@ -325,7 +325,7 @@
 
         /* Work Samples Section */
         .work-samples {
-            padding: 100px 0;
+            padding: 100px 0 48px;
             background: var(--bg);
             position: relative;
             overflow: hidden;
@@ -369,11 +369,15 @@
             text-align: center;
         }
 
+        .instagram-carousel-shell {
+            position: relative;
+        }
+
         .instagram-showcase {
             display: grid;
             grid-template-columns: repeat(3, minmax(360px, 1fr));
             gap: 28px;
-            align-items: start;
+            align-items: stretch;
             justify-content: center;
             margin-top: 58px;
         }
@@ -381,13 +385,15 @@
         .instagram-card {
             min-width: 0;
             width: 100%;
-            overflow: visible;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
             background: var(--card);
             border: 1px solid var(--border);
             border-radius: 18px;
             padding: 18px;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-            transition: all 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s, opacity 0.25s;
         }
 
         .instagram-card:hover {
@@ -398,6 +404,7 @@
 
         .sample-label {
             display: block;
+            flex: 0 0 auto;
             color: var(--primary);
             font-size: 12px;
             font-weight: 800;
@@ -407,14 +414,37 @@
             text-align: center;
         }
 
+        /* Todos os embeds terminam exatamente na mesma altura. O gradiente
+           suaviza o fim da legenda sem criar cortes secos ou cartões irregulares. */
         .instagram-frame {
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: flex-start;
             width: 100%;
+            height: 900px;
             min-width: 0;
-            overflow: visible;
+            overflow: hidden;
+            border-radius: 14px;
             background: #ffffff;
+        }
+
+        .instagram-frame::after {
+            content: '';
+            position: absolute;
+            z-index: 4;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 130px;
+            pointer-events: none;
+            background: linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.72) 48%,
+                #ffffff 88%,
+                #ffffff 100%
+            );
         }
 
         .instagram-frame .instagram-media,
@@ -427,14 +457,12 @@
             border: 0 !important;
         }
 
-        /* O Instagram define a altura do iframe. Não sobrescrever esse valor
-           evita cortes na legenda, curtidas e área de comentários. */
         .instagram-frame iframe {
             overflow: visible !important;
         }
 
         .instagram-fallback {
-            min-height: 520px;
+            min-height: 760px;
             width: 100%;
             display: flex;
             align-items: center;
@@ -449,22 +477,27 @@
             background: var(--accent);
         }
 
+        .instagram-carousel-arrow,
+        .instagram-carousel-status {
+            display: none;
+        }
+
         .work-cta {
             text-align: center;
-            margin-top: 48px;
+            margin-top: 36px;
         }
 
         .work-note {
             font-size: 14px;
             color: var(--muted);
             max-width: 680px;
-            margin: 18px auto 0;
+            margin: 16px auto 0;
             line-height: 1.7;
         }
 
         /* Plans Section */
         .plans {
-            padding: 100px 0;
+            padding: 56px 0 100px;
             background: var(--bg);
         }
 
@@ -860,9 +893,13 @@
         @media (max-width: 1280px) and (min-width: 769px) {
             .instagram-showcase {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
-                max-width: 900px;
+                max-width: 940px;
                 margin-left: auto;
                 margin-right: auto;
+            }
+
+            .instagram-frame {
+                height: 900px;
             }
         }
 
@@ -892,15 +929,128 @@
             }
 
 
-            .instagram-showcase {
-                grid-template-columns: 1fr;
-                max-width: 420px;
-                margin-left: auto;
-                margin-right: auto;
+            .work-samples {
+                padding: 72px 0 38px;
             }
 
+            .instagram-carousel-shell {
+                max-width: 480px;
+                margin: 0 auto;
+                padding: 0 28px;
+            }
+
+            .instagram-showcase {
+                display: block;
+                position: relative;
+                width: 100%;
+                max-width: none;
+                margin: 42px auto 0;
+            }
+
+            /* No celular, somente o cartão ativo ocupa o espaço visual. Os
+               demais permanecem carregados para que o Instagram não reinicie. */
             .instagram-card {
+                position: absolute;
+                inset: 0;
                 padding: 14px;
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                transform: translateX(14px);
+            }
+
+            .instagram-card.is-active {
+                position: relative;
+                inset: auto;
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+                transform: translateX(0);
+            }
+
+            .instagram-card:hover,
+            .instagram-card.is-active:hover {
+                transform: translateX(0);
+            }
+
+            .instagram-frame {
+                height: clamp(760px, 215vw, 880px);
+            }
+
+            .instagram-frame::after {
+                height: 118px;
+            }
+
+            .instagram-carousel-arrow {
+                position: absolute;
+                z-index: 10;
+                top: calc(50% - 2px);
+                width: 44px;
+                height: 44px;
+                border: 1px solid rgba(15, 118, 110, 0.24);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+                background: rgba(255, 255, 255, 0.96);
+                color: var(--primary);
+                box-shadow: 0 7px 22px rgba(0, 0, 0, 0.16);
+                cursor: pointer;
+                transform: translateY(-50%);
+                transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+            }
+
+            .instagram-carousel-arrow:active {
+                transform: translateY(-50%) scale(0.94);
+            }
+
+            .instagram-carousel-arrow:hover {
+                background: var(--accent);
+                box-shadow: 0 9px 25px rgba(15, 118, 110, 0.20);
+            }
+
+            .instagram-carousel-prev {
+                left: 5px;
+            }
+
+            .instagram-carousel-next {
+                right: 5px;
+            }
+
+            .instagram-carousel-status {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 7px;
+                min-height: 24px;
+                margin-top: 14px;
+                color: var(--muted);
+                font-size: 13px;
+                font-weight: 700;
+                letter-spacing: 0.2px;
+            }
+
+            .instagram-carousel-dot {
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                background: var(--border);
+                transition: width 0.2s, background 0.2s;
+            }
+
+            .instagram-carousel-dot.is-active {
+                width: 20px;
+                border-radius: 999px;
+                background: var(--primary);
+            }
+
+            .work-cta {
+                margin-top: 28px;
+            }
+
+            .plans {
+                padding-top: 46px;
             }
 
 
@@ -1056,27 +1206,47 @@
             <h2 class="section-title">Conteúdos reais, com apresentação profissional</h2>
             <p class="section-subtitle">Veja exemplos de posts produzidos para comunicar autoridade, clareza e confiança sem perder a naturalidade do profissional.</p>
 
-            <div class="instagram-showcase">
-                <article class="instagram-card">
-                    <span class="sample-label">Vídeo 01</span>
-                    <div class="instagram-frame">
-                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DYkI63otjwE/" data-instgrm-version="14" data-instgrm-captioned style="background:#fff; border:0; border-radius:12px; box-shadow:none; margin:0 auto; max-width:540px; min-width:0; padding:0; width:100%;"><a class="instagram-fallback" href="https://www.instagram.com/p/DYkI63otjwE/" target="_blank" rel="noopener noreferrer">Ver vídeo no Instagram</a></blockquote>
-                    </div>
-                </article>
+            <div class="instagram-carousel-shell" aria-label="Amostras de trabalhos no Instagram">
+                <button class="instagram-carousel-arrow instagram-carousel-prev" type="button" aria-label="Mostrar publicação anterior">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
 
-                <article class="instagram-card">
-                    <span class="sample-label">Carrossel 02</span>
-                    <div class="instagram-frame">
-                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DXtz_VaDfNv/" data-instgrm-version="14" data-instgrm-captioned style="background:#fff; border:0; border-radius:12px; box-shadow:none; margin:0 auto; max-width:540px; min-width:0; padding:0; width:100%;"><a class="instagram-fallback" href="https://www.instagram.com/p/DXtz_VaDfNv/" target="_blank" rel="noopener noreferrer">Ver carrossel no Instagram</a></blockquote>
-                    </div>
-                </article>
+                <div class="instagram-showcase">
+                    <article class="instagram-card is-active" data-instagram-slide="0" aria-hidden="false">
+                        <span class="sample-label">Vídeo 01</span>
+                        <div class="instagram-frame">
+                            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DYkI63otjwE/" data-instgrm-version="14" data-instgrm-captioned style="background:#fff; border:0; border-radius:12px; box-shadow:none; margin:0 auto; max-width:540px; min-width:0; padding:0; width:100%;"><a class="instagram-fallback" href="https://www.instagram.com/p/DYkI63otjwE/" target="_blank" rel="noopener noreferrer">Ver vídeo no Instagram</a></blockquote>
+                        </div>
+                    </article>
 
-                <article class="instagram-card">
-                    <span class="sample-label">Carrossel 03</span>
-                    <div class="instagram-frame">
-                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DbENGzDGkEA/" data-instgrm-version="14" data-instgrm-captioned style="background:#fff; border:0; border-radius:12px; box-shadow:none; margin:0 auto; max-width:540px; min-width:0; padding:0; width:100%;"><a class="instagram-fallback" href="https://www.instagram.com/p/DbENGzDGkEA/" target="_blank" rel="noopener noreferrer">Ver carrossel no Instagram</a></blockquote>
-                    </div>
-                </article>
+                    <article class="instagram-card" data-instagram-slide="1" aria-hidden="true">
+                        <span class="sample-label">Carrossel 02</span>
+                        <div class="instagram-frame">
+                            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DXtz_VaDfNv/" data-instgrm-version="14" data-instgrm-captioned style="background:#fff; border:0; border-radius:12px; box-shadow:none; margin:0 auto; max-width:540px; min-width:0; padding:0; width:100%;"><a class="instagram-fallback" href="https://www.instagram.com/p/DXtz_VaDfNv/" target="_blank" rel="noopener noreferrer">Ver carrossel no Instagram</a></blockquote>
+                        </div>
+                    </article>
+
+                    <article class="instagram-card" data-instagram-slide="2" aria-hidden="true">
+                        <span class="sample-label">Carrossel 03</span>
+                        <div class="instagram-frame">
+                            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DbENGzDGkEA/" data-instgrm-version="14" data-instgrm-captioned style="background:#fff; border:0; border-radius:12px; box-shadow:none; margin:0 auto; max-width:540px; min-width:0; padding:0; width:100%;"><a class="instagram-fallback" href="https://www.instagram.com/p/DbENGzDGkEA/" target="_blank" rel="noopener noreferrer">Ver carrossel no Instagram</a></blockquote>
+                        </div>
+                    </article>
+                </div>
+
+                <button class="instagram-carousel-arrow instagram-carousel-next" type="button" aria-label="Mostrar próxima publicação">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+
+                <div class="instagram-carousel-status" aria-live="polite" aria-label="Publicação 1 de 3">
+                    <span class="instagram-carousel-dot is-active" aria-hidden="true"></span>
+                    <span class="instagram-carousel-dot" aria-hidden="true"></span>
+                    <span class="instagram-carousel-dot" aria-hidden="true"></span>
+                </div>
             </div>
 
             <div class="work-cta">
@@ -1546,6 +1716,66 @@
             });
         });
 
+
+        // Instagram carousel (mobile)
+        function initInstagramCarousel() {
+            const shell = document.querySelector('.instagram-carousel-shell');
+            if (!shell) return;
+
+            const slides = Array.from(shell.querySelectorAll('.instagram-card'));
+            const previousButton = shell.querySelector('.instagram-carousel-prev');
+            const nextButton = shell.querySelector('.instagram-carousel-next');
+            const status = shell.querySelector('.instagram-carousel-status');
+            const dots = Array.from(shell.querySelectorAll('.instagram-carousel-dot'));
+
+            if (!slides.length || !previousButton || !nextButton) return;
+
+            let currentSlide = 0;
+            let touchStartX = null;
+
+            function showSlide(index) {
+                currentSlide = (index + slides.length) % slides.length;
+
+                slides.forEach((slide, slideIndex) => {
+                    const isActive = slideIndex === currentSlide;
+                    slide.classList.toggle('is-active', isActive);
+                    slide.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+                });
+
+                dots.forEach((dot, dotIndex) => {
+                    dot.classList.toggle('is-active', dotIndex === currentSlide);
+                });
+
+                if (status) {
+                    status.setAttribute('aria-label', `Publicação ${currentSlide + 1} de ${slides.length}`);
+                }
+
+                // Alguns navegadores só calculam o iframe quando o slide se torna visível.
+                const activeSlide = slides[currentSlide];
+                if (!activeSlide.querySelector('iframe') && window.instgrm && window.instgrm.Embeds) {
+                    window.instgrm.Embeds.process();
+                }
+            }
+
+            previousButton.addEventListener('click', () => showSlide(currentSlide - 1));
+            nextButton.addEventListener('click', () => showSlide(currentSlide + 1));
+
+            shell.addEventListener('touchstart', event => {
+                touchStartX = event.changedTouches[0].clientX;
+            }, { passive: true });
+
+            shell.addEventListener('touchend', event => {
+                if (touchStartX === null) return;
+                const distance = event.changedTouches[0].clientX - touchStartX;
+                touchStartX = null;
+
+                if (Math.abs(distance) < 45) return;
+                showSlide(distance > 0 ? currentSlide - 1 : currentSlide + 1);
+            }, { passive: true });
+
+            showSlide(0);
+        }
+
         // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(button => {
             button.addEventListener('click', function() {
@@ -1584,6 +1814,7 @@
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
             captureUTMs();
+            initInstagramCarousel();
             track('PageView', {
                 page: window.location.pathname,
                 utm_campaign: capturedUTMCampaign
