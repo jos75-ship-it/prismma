@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="380 280 1280 1470" role="img" aria-label="Prismma">
+  <defs>
+    <linearGradient id="haste" x1="0" y1="290" x2="0" y2="1736" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#12a4a2"/>
+      <stop offset=".62" stop-color="#0c9d9d"/>
+      <stop offset="1" stop-color="#045e6f"/>
+    </linearGradient>
+    <linearGradient id="bojo" x1="1600" y1="560" x2="768" y2="760" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#eaf9e3"/>
+      <stop offset=".3" stop-color="#9fe0c9"/>
+      <stop offset=".62" stop-color="#4cbdb0"/>
+      <stop offset="1" stop-color="#12a4a2"/>
+    </linearGradient>
+    <linearGradient id="sombra" x1="1380" y1="930" x2="860" y2="1360" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#025f72" stop-opacity="0"/>
+      <stop offset=".65" stop-color="#03707c" stop-opacity=".6"/>
+      <stop offset="1" stop-color="#025f72" stop-opacity="1"/>
+    </linearGradient>
+    <filter id="grao" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" stitchTiles="stitch" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0" result="m"/>
+      <feComponentTransfer in="m" result="a"><feFuncA type="linear" slope=".38"/></feComponentTransfer>
+      <feComposite in="a" in2="SourceGraphic" operator="in" result="t"/>
+      <feBlend in="t" in2="SourceGraphic" mode="overlay"/>
+    </filter>
+  </defs>
+  <g filter="url(#grao)">
+    <path id="b" fill="url(#bojo)" fill-rule="evenodd" d="M760 290H1180C1440 290 1642 530 1642 825C1642 1118 1430 1362 1180 1362H760Z M760 748C1010 742 1250 702 1452 622L760 1330Z"/>
+    <path fill="url(#sombra)" fill-rule="evenodd" d="M760 290H1180C1440 290 1642 530 1642 825C1642 1118 1430 1362 1180 1362H760Z M760 748C1010 742 1250 702 1452 622L760 1330Z"/>
+    <path fill="url(#haste)" d="M392 290H769V1736H392Z"/>
+  </g>
+</svg>

@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prismma | Site para clínica odontológica em 48h por R$ 197</title>
+<meta name="description" content="Site completo para sua clínica odontológica em até 48h. Você vê a prévia antes de pagar. R$ 197, sem mensalidade de hospedagem.">
+<link rel="canonical" href="https://prismma.shop/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Prismma | Site para clínica odontológica em 48h por R$ 197">
+<meta property="og:description" content="Site completo para sua clínica odontológica em até 48h. Você vê a prévia antes de pagar. R$ 197, sem mensalidade de hospedagem.">
+<meta property="og:url" content="https://prismma.shop/">
+<meta property="og:image" content="https://prismma.shop/img/og-prismma.png">
+<meta property="og:locale" content="pt_BR">
+<meta name="theme-color" content="#045e6f">
+<link rel="icon" href="img/prismma-p.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+.hero { padding: clamp(2rem, 5vw, 4.5rem) 0 clamp(3.5rem, 7vw, 6rem); }
+.hero-in { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.hero-texto { display: flex; flex-direction: column; gap: 1.5rem; }
+.para-quem { display: inline-flex; align-items: center; gap: .6rem; color: var(--teal); font: 600 .98rem "Montserrat", system-ui, sans-serif; }
+.para-quem img { width: 18px; }
+.hero h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); font-weight: 300; line-height: 1.02; letter-spacing: -0.035em; }
+.hero h1 b { font-weight: 700; }
+.hero .apoio { font-size: clamp(1.1rem, 1.6vw, 1.25rem); color: var(--tinta-2); max-width: 31em; }
+.botoes { display: flex; flex-wrap: wrap; gap: .8rem; }
+.garantias { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; font-size: .98rem; color: var(--tinta-2); }
+.garantias li { display: inline-flex; align-items: center; gap: .5rem; }
+.garantias svg { width: 18px; height: 18px; color: var(--teal); flex: none; }
+
+.hero-arte { position: relative; min-height: 560px; display: grid; place-items: center; }
+.bojo { position: absolute; inset: 0 0 0 8%; border-radius: 40px 999px 999px 40px; }
+
+.telefone { position: relative; z-index: 2; width: min(300px, 70%); aspect-ratio: 390 / 844; border-radius: 44px; padding: 10px; background: #06232a; box-shadow: 0 40px 80px rgba(4, 36, 43, .35), inset 0 0 0 1.5px rgba(255, 255, 255, .12); }
+.telefone img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 34px; }
+.telefone::before { content: ""; position: absolute; top: 18px; left: 50%; width: 30%; height: 22px; transform: translateX(-50%); border-radius: 999px; background: #06232a; z-index: 1; }
+.etiqueta { position: absolute; z-index: 3; left: 0; bottom: 12%; background: var(--fundo); color: var(--tinta); border-radius: 22px; padding: .9rem 1.2rem; box-shadow: 0 18px 40px rgba(4, 36, 43, .2); display: flex; flex-direction: column; gap: .05rem; }
+.etiqueta small { font-size: .88rem; color: var(--tinta-2); }
+.etiqueta b { font: 700 1.9rem/1 "Montserrat", system-ui, sans-serif; letter-spacing: -0.03em; color: var(--petroleo); }
+.etiqueta span { font-size: .88rem; color: var(--tinta-2); }
+
+section { padding: clamp(4rem, 8vw, 7rem) 0; }
+.cab { max-width: 40em; display: flex; flex-direction: column; gap: 1rem; margin-bottom: clamp(2.2rem, 4vw, 3.4rem); }
+.cab h2 { font-size: clamp(2rem, 4vw, 3.1rem); font-weight: 300; letter-spacing: -0.03em; }
+.cab h2 b { font-weight: 700; }
+.cab p { color: var(--tinta-2); font-size: 1.12rem; }
+.grao-escuro .cab h2 { color: #ffffff; }
+.grao-escuro .cab p { color: #a8cdcd; }
+
+.passos { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); counter-reset: p; }
+.passos li { counter-increment: p; display: flex; flex-direction: column; gap: .7rem; padding-top: 1.4rem; border-top: 1px solid rgba(255, 255, 255, .2); }
+.passos li::before { content: counter(p); font: 200 4.2rem/1 "Montserrat", system-ui, sans-serif; letter-spacing: -0.04em; background: linear-gradient(135deg, #eaf9e3, #4fbfb1); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.passos h3 { color: #ffffff; font-size: 1.3rem; font-weight: 600; }
+.passos p { color: #b4d4d3; }
+
+.inclui { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(2rem, 6vw, 5.5rem); align-items: center; }
+.inclui-arte { position: relative; display: grid; place-items: center; padding: 2.5rem 0; }
+.inclui-arte::before { content: ""; position: absolute; inset: 8% 6%; border-radius: 999px 999px 40px 40px; background: var(--degrade-fundo); opacity: .9; }
+.inclui-arte .telefone { width: min(280px, 78%); }
+.lista-inclui { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 2.5rem; }
+.lista-inclui li { padding: 1.1rem 0; border-top: 1px solid var(--linha); display: flex; flex-direction: column; gap: .25rem; }
+.lista-inclui b { font: 600 1.05rem/1.3 "Montserrat", system-ui, sans-serif; }
+.lista-inclui span { color: var(--tinta-2); font-size: 1rem; }
+
+.modelos-sec { background: var(--sup); }
+.modelos { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.2rem, 3vw, 2.5rem); align-items: start; }
+.modelos li:nth-child(2) { margin-top: 3.5rem; }
+.modelo { display: flex; flex-direction: column; gap: 1rem; text-decoration: none; }
+.modelo .tela { border-radius: 30px; padding: 8px; background: #06232a; box-shadow: 0 24px 50px rgba(4, 36, 43, .2); aspect-ratio: 390 / 600; overflow: hidden; }
+.modelo .tela img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 23px; }
+.modelo h3 { font-size: 1.3rem; font-weight: 600; }
+.modelo p { color: var(--tinta-2); }
+.modelo .abrir { display: inline-flex; align-items: center; gap: .4rem; min-height: 44px; font: 600 .98rem "Montserrat", system-ui, sans-serif; color: var(--teal); }
+.modelo:hover .abrir { text-decoration: underline; }
+.nota-modelos { margin-top: 2.2rem; font-size: .95rem; color: var(--tinta-2); }
+
+.preco-card { border-radius: 40px; padding: clamp(2rem, 5vw, 4rem); display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.preco-card h2 { color: #ffffff; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 300; }
+.preco-card h2 b { font-weight: 700; }
+.valor { font: 200 clamp(5rem, 13vw, 9rem)/.9 "Montserrat", system-ui, sans-serif; letter-spacing: -0.06em; color: #ffffff; margin: 1rem 0 .6rem; }
+.valor small { font-size: .3em; font-weight: 500; letter-spacing: -0.01em; vertical-align: top; margin-right: .2em; }
+.preco-card .sub { color: rgba(255, 255, 255, .92); }
+.preco-card .btn { margin-top: 1.6rem; }
+.colunas-preco { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; background: rgba(4, 36, 43, .32); border-radius: 28px; padding: clamp(1.4rem, 3vw, 2rem); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.colunas-preco h3 { color: #ffffff; font-size: 1.05rem; font-weight: 600; margin-bottom: .7rem; letter-spacing: 0; }
+.colunas-preco ul { list-style: none; padding: 0; display: grid; gap: .55rem; }
+.colunas-preco li { display: grid; grid-template-columns: 18px 1fr; gap: .55rem; color: #eaf6f3; font-size: .98rem; line-height: 1.45; }
+.colunas-preco svg { width: 18px; height: 18px; margin-top: .15rem; }
+
+.servicos { display: grid; gap: 0; border-top: 1px solid var(--linha); }
+.servico { display: grid; grid-template-columns: 1fr 1.4fr auto; gap: 1.5rem 2.5rem; align-items: center; padding: 1.8rem 0; border-bottom: 1px solid var(--linha); text-decoration: none; }
+.servico h3 { font-size: clamp(1.35rem, 2.4vw, 1.8rem); font-weight: 300; }
+.servico h3 b { font-weight: 700; }
+.servico p { color: var(--tinta-2); }
+.servico .ir { width: 56px; height: 56px; border-radius: 999px; display: grid; place-items: center; border: 1.5px solid var(--linha); color: var(--tinta); transition: background .2s ease, color .2s ease, border-color .2s ease; }
+.servico .ir svg { width: 22px; height: 22px; }
+.servico:hover .ir { background: var(--petroleo); border-color: var(--petroleo); color: #ffffff; }
+
+.faq-in { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.faq-in .cab { position: sticky; top: 110px; }
+.faq details { border-top: 1px solid var(--linha); }
+.faq details:last-child { border-bottom: 1px solid var(--linha); }
+.faq summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 68px; padding: 1rem 0; font: 600 1.12rem/1.35 "Montserrat", system-ui, sans-serif; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: ""; flex: none; width: 12px; height: 12px; border-right: 2px solid var(--teal); border-bottom: 2px solid var(--teal); transform: rotate(45deg) translate(-3px, -3px); transition: transform .2s ease; }
+.faq details[open] summary::after { transform: rotate(-135deg) translate(-3px, -3px); }
+.faq details p { padding: 0 2rem 1.4rem 0; color: var(--tinta-2); }
+
+.final { padding: 0 0 clamp(4rem, 8vw, 6rem); }
+.final-card { border-radius: 40px; padding: clamp(2.5rem, 6vw, 5rem); display: grid; grid-template-columns: 1.3fr .7fr; gap: 2rem; align-items: end; }
+.final-card h2 { color: #ffffff; font-size: clamp(2rem, 4.4vw, 3.4rem); font-weight: 300; letter-spacing: -0.03em; }
+.final-card h2 b { font-weight: 700; }
+.final-card p { color: rgba(255, 255, 255, .92); margin-top: 1rem; font-size: 1.1rem; max-width: 30em; }
+.final-card .botoes { justify-content: flex-end; }
+
+@media (max-width: 960px) {
+  .hero-in, .inclui, .preco-card, .faq-in, .final-card { grid-template-columns: 1fr; }
+  .hero-arte { min-height: 520px; }
+  .bojo { inset: 0 0 0 0; }
+  .passos { grid-template-columns: 1fr; gap: 1.2rem; }
+  .passos li { display: grid; grid-template-columns: 64px 1fr; column-gap: 1rem; }
+  .passos li::before { grid-row: span 2; font-size: 3.2rem; }
+  .inclui-arte { order: 2; }
+  .faq-in .cab { position: static; }
+  .final-card .botoes { justify-content: flex-start; }
+  .servico { grid-template-columns: 1fr auto; }
+  .servico p { grid-column: 1; }
+  .servico .ir { grid-row: 1 / span 2; grid-column: 2; }
+  .modelos { grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: 70%; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 1rem; scrollbar-width: none; }
+  .modelos::-webkit-scrollbar { display: none; }
+  .modelos li { scroll-snap-align: start; }
+  .modelos li:nth-child(2) { margin-top: 0; }
+}
+@media (max-width: 600px) {
+  .hero-arte { min-height: 460px; }
+  .etiqueta { bottom: 6%; padding: .7rem 1rem; }
+  .etiqueta b { font-size: 1.6rem; }
+  .lista-inclui, .colunas-preco { grid-template-columns: 1fr; }
+  .botoes .btn { flex: 1 1 100%; }
+}
+
+</style>
+</head>
+<body>
+<a class="visual-oculto" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo">
+  <div class="wrap topo-in">
+    <a class="marca" href="index.html" aria-label="Prismma, página inicial"><img src="img/prismma-p.svg" width="34" height="39" alt=""><span>Pris<b>smma</b></span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Abrir menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <div class="grupo">
+        <button type="button" aria-expanded="false" aria-controls="sub-servicos">Serviços <svg class="seta" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m2 4 4 4 4-4"/></svg></button>
+        <div class="submenu" id="sub-servicos" hidden>
+          <a href="index.html"><span class="ic grao"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg></span><span><b>Site para clínicas</b><small>Pronto em 48h, você aprova antes de pagar</small></span><span class="preco">R$ 197</span></a>
+          <a href="planos.html#trafego"><span class="ic grao"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span><span><b>Gestão de tráfego pago</b><small>Anúncios no Meta para gerar contatos no WhatsApp</small></span></a>
+          <a href="planos.html#social"><span class="ic grao"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></span><span><b>Social media</b><small>Calendário, edição e publicação do Instagram</small></span></a>
+        </div>
+      </div>
+      <a href="index.html#modelos">Modelos</a>
+      <a href="planos.html">Planos</a>
+      <a href="index.html#duvidas">Dúvidas</a>
+      <a class="btn btn-acao" data-wa="Olá! Vim pelo site da Prismma e quero a prévia do site da minha clínica." data-evento="clique_whatsapp_topo">Pedir minha prévia</a>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+  <section class="hero" aria-labelledby="t-hero" style="padding-top:clamp(2rem,5vw,4.5rem)">
+    <div class="wrap hero-in">
+      <div class="hero-texto">
+        <p class="para-quem"><img src="img/prismma-p.svg" width="18" height="21" alt="">Sites para clínicas odontológicas</p>
+        <h1 id="t-hero">Sua clínica com <b>site próprio</b> em 48h.</h1>
+        <p class="apoio">Você pede a prévia, vê como o site da sua clínica vai ficar e só paga se aprovar. R$ 197, sem mensalidade de hospedagem.</p>
+        <div class="botoes">
+          <a class="btn btn-acao" data-wa="Olá! Vim pelo site da Prismma e quero a prévia do site da minha clínica. Nome da clínica e cidade: " data-evento="clique_whatsapp_hero"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg>Pedir a prévia da minha clínica</a>
+          <a class="btn btn-linha" href="#modelos">Ver modelos</a>
+        </div>
+        <ul class="garantias">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Você vê antes de pagar</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Regras do CRO aplicadas</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Feito para o celular</li>
+        </ul>
+      </div>
+      <div class="hero-arte" aria-hidden="true">
+        <div class="bojo grao"></div>
+        <div class="telefone"><img src="img/modelo-cartao.webp" width="600" height="1298" alt=""></div>
+        <div class="etiqueta"><small>Site completo</small><b>R$ 197</b><span>pagamento único</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="grao-escuro" aria-labelledby="t-passos">
+    <div class="wrap">
+      <div class="cab">
+        <h2 id="t-passos">Do primeiro contato ao <b>site no ar</b></h2>
+        <p>Sem reunião longa e sem briefing de vinte páginas. Você responde poucas perguntas pelo WhatsApp e a gente faz o resto.</p>
+      </div>
+      <ol class="passos">
+        <li><h3>Peça a prévia</h3><p>Mande o nome e a cidade da clínica. Montamos o começo do site com os dados do seu perfil no Google e te enviamos no WhatsApp.</p></li>
+        <li><h3>Aprovou? Pague e envie</h3><p>Pagamento de R$ 197 por Pix. Depois você envia logo, fotos, tratamentos e equipe por um formulário simples.</p></li>
+        <li><h3>Site no ar em 48h</h3><p>Publicado no domínio da sua clínica, com uma rodada de ajustes incluída antes da entrega final.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-inclui">
+    <div class="wrap">
+      <div class="cab">
+        <h2 id="t-inclui">Tudo o que o paciente <b>procura antes de ligar</b></h2>
+        <p>Quem chega pelo Google ou pelo Instagram quer saber três coisas: se a clínica resolve o problema, se fica perto e como falar com ela. O site responde as três.</p>
+      </div>
+      <div class="inclui">
+        <div class="inclui-arte" aria-hidden="true"><div class="telefone"><img src="img/modelo-fluxo.webp" width="600" height="1298" alt="" loading="lazy"></div></div>
+        <ul class="lista-inclui">
+          <li><b>Página completa da clínica</b><span>Apresentação, tratamentos, equipe, fotos, localização e dúvidas frequentes.</span></li>
+          <li><b>WhatsApp com mensagem pronta</b><span>A recepção já sabe que o paciente veio do site e o que ele procura.</span></li>
+          <li><b>Pensado para o celular</b><span>Botões grandes, leitura fácil e carregamento rápido no 4G.</span></li>
+          <li><b>Pronto para o Google</b><span>Configurado para buscas locais e ligado ao Perfil da Empresa da clínica.</span></li>
+          <li><b>Dentro das regras do CRO</b><span>Responsável técnico com registro, sem preço e sem antes e depois.</span></li>
+          <li><b>Sem mensalidade</b><span>Hospedagem gratuita. O domínio fica no nome da clínica, não no nosso.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="modelos-sec" id="modelos" aria-labelledby="t-modelos">
+    <div class="wrap">
+      <div class="cab">
+        <h2 id="t-modelos">Três jeitos de <b>apresentar a sua clínica</b></h2>
+        <p>Abra no celular e navegue como um paciente. O seu site sai com as cores, as fotos e as informações da sua clínica.</p>
+      </div>
+      <ul class="modelos">
+        <li><a class="modelo" href="modelo-cartao.html" target="_blank" rel="noopener"><span class="tela"><img src="img/modelo-cartao.webp" width="600" height="1298" alt="Modelo Cartão no celular" loading="lazy"></span><h3>Cartão</h3><p>Rápido e direto, como um cartão de visita. Ideal para o link da bio e do Google.</p><span class="abrir">Abrir modelo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+        <li><a class="modelo" href="modelo-fluxo.html" target="_blank" rel="noopener"><span class="tela"><img src="img/modelo-fluxo.webp" width="600" height="1298" alt="Modelo Fluxo no celular" loading="lazy"></span><h3>Fluxo</h3><p>O paciente escolhe o motivo da consulta e já chega no WhatsApp com a mensagem certa. Ideal para quem anuncia.</p><span class="abrir">Abrir modelo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+        <li><a class="modelo" href="modelo-abas.html" target="_blank" rel="noopener"><span class="tela"><img src="img/modelo-abas.webp" width="600" height="1298" alt="Modelo Abas no celular" loading="lazy"></span><h3>Abas</h3><p>Tipografia refinada e navegação por abas, para clínicas de estética e alto padrão.</p><span class="abrir">Abrir modelo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+      </ul>
+      <p class="nota-modelos">Os modelos usam uma clínica fictícia e imagens ilustrativas.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-preco">
+    <div class="wrap">
+      <div class="preco-card grao">
+        <div>
+          <h2 id="t-preco">Preço de <b>lançamento</b></h2>
+          <p class="valor"><small>R$</small>197</p>
+          <p class="sub">Pagamento único por Pix, só depois que você aprovar a prévia.</p>
+          <a class="btn btn-claro" data-wa="Olá! Vim pelo site da Prismma e quero a prévia do site da minha clínica. Nome da clínica e cidade: " data-evento="clique_whatsapp_preco"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg>Pedir a prévia</a>
+        </div>
+        <div class="colunas-preco">
+          <div>
+            <h3>Está incluído</h3>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Site completo em uma página</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Botão de WhatsApp e telefone</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Configuração para o Google</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Publicação e hospedagem</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Uma rodada de ajustes</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Fica por conta da clínica</h3>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Domínio próprio (cerca de R$ 40 por ano no Registro.br)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Fotos da clínica e da equipe (a gente orienta)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Alterações depois da entrega, orçadas à parte</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-servicos" style="padding-top:0">
+    <div class="wrap">
+      <div class="cab">
+        <h2 id="t-servicos">Quer mais pacientes <b>chegando pelo site?</b></h2>
+        <p>Com o site no ar, a Prismma também cuida dos anúncios e das redes sociais da clínica.</p>
+      </div>
+      <div class="servicos">
+        <a class="servico" href="planos.html#trafego"><h3>Gestão de <b>tráfego pago</b></h3><p>Anúncios no Facebook e no Instagram que levam pacientes da sua região direto ao WhatsApp, com relatório mensal de resultados.</p><span class="ir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a class="servico" href="planos.html#social"><h3><b>Social media</b> para clínicas</h3><p>Calendário editorial, direção de gravação, edição e publicação no Instagram, sem você precisar improvisar.</p><span class="ir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="modelos-sec" id="duvidas" aria-labelledby="t-duvidas">
+    <div class="wrap faq-in">
+      <div class="cab">
+        <h2 id="t-duvidas">Dúvidas <b>frequentes</b></h2>
+        <p>Não achou a sua? Pergunte pelo WhatsApp.</p>
+        <div><a class="btn btn-linha" data-wa="Olá! Vim pelo site da Prismma e tenho uma dúvida sobre o site para clínicas." data-evento="clique_whatsapp_faq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg>Perguntar no WhatsApp</a></div>
+      </div>
+      <div class="faq">
+        <details><summary>Preciso pagar mensalidade?</summary><p>Não. A hospedagem é gratuita. O único custo recorrente é o domínio (o endereço do site), pago pela clínica diretamente no Registro.br, cerca de R$ 40 por ano.</p></details>
+        <details><summary>E se eu não gostar da prévia?</summary><p>Você não paga nada. O pagamento só acontece depois que você vê a prévia e decide seguir.</p></details>
+        <details><summary>O que eu preciso enviar?</summary><p>Logo, fotos da fachada, da recepção, dos consultórios e da equipe, a lista de tratamentos, o nome e o CRO de cada dentista, o endereço e o horário. Se as fotos ainda não existirem, enviamos um roteiro para tirar com o celular.</p></details>
+        <details><summary>Já tenho um domínio ou um site antigo. Dá para usar?</summary><p>Sim. Apontamos o domínio que a clínica já tem para o novo site, sem custo adicional.</p></details>
+        <details><summary>O site segue as regras do CRO?</summary><p>Sim. O site traz o nome e o registro do responsável técnico, não anuncia preços de tratamentos e não usa fotos de antes e depois.</p></details>
+        <details><summary>O site vai aparecer no Google?</summary><p>Configuramos o site para o Google encontrar e entender a clínica, e o ligamos ao Perfil da Empresa. A posição nos resultados depende de vários fatores e não pode ser garantida.</p></details>
+        <details><summary>Atendem outras áreas da saúde?</summary><p>Começamos pelas clínicas odontológicas. Para médicos, fisioterapeutas e outras áreas, fale com a gente: as regras de cada conselho mudam o que pode aparecer no site.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" aria-labelledby="t-final" style="padding-top:clamp(4rem,8vw,6rem)">
+    <div class="wrap">
+      <div class="final-card grao">
+        <div>
+          <h2 id="t-final">Veja o site da sua clínica <b>antes de pagar.</b></h2>
+          <p>Mande o nome e a cidade da clínica. A prévia chega no seu WhatsApp.</p>
+        </div>
+        <div class="botoes"><a class="btn btn-claro" data-wa="Olá! Vim pelo site da Prismma e quero a prévia do site da minha clínica. Nome da clínica e cidade: " data-evento="clique_whatsapp_final"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg>Pedir minha prévia</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+<div class="flutua"><a class="btn btn-acao" data-wa="Olá! Vim pelo site da Prismma e quero a prévia do site da minha clínica. Nome da clínica e cidade: " data-evento="clique_whatsapp_flutuante" aria-label="Pedir prévia pelo WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg>Pedir prévia</a></div>
+
+<footer class="rodape grao-escuro">
+  <div class="wrap rodape-in">
+    <div>
+      <a class="marca" href="index.html" aria-label="Prismma, página inicial"><img src="img/prismma-p.svg" width="34" height="39" alt=""><span>Pris<b>smma</b></span></a>
+      <p>Marketing para clínicas e profissionais da saúde: sites, anúncios e redes sociais, dentro das regras dos conselhos profissionais.</p>
+    </div>
+    <div>
+      <h4>Serviços</h4>
+      <ul>
+        <li><a href="index.html">Site para clínicas</a></li>
+        <li><a href="planos.html#trafego">Gestão de tráfego pago</a></li>
+        <li><a href="planos.html#social">Social media</a></li>
+        <li><a href="index.html#modelos">Modelos de site</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contato</h4>
+      <ul>
+        <li><a data-wa="Olá! Vim pelo site da Prismma." data-evento="clique_whatsapp_rodape">WhatsApp (19) 99236-5415</a></li>
+        <li><a href="politica-de-privacidade.html">Política de privacidade</a></li>
+      </ul>
+    </div>
+    <div class="rodape-base">
+      <span>© 2026 Prismma Marketing</span>
+      <span>Resultados variam conforme cada clínica e não são garantidos.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
